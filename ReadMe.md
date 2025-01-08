@@ -1,5 +1,5 @@
 # MGLite Project
-**Project for displaying your images like a slide-show software within any browser that you want with costume configurations!**
+**Project for displaying your images like a slide-show software within any browser that you want with custom configurations!**
 
 ## Overview
 The ***MGLite*** Project, developed by ***Epixoul***, which includes three main scripts:  
