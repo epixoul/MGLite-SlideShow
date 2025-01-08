@@ -1,4 +1,5 @@
 # MGLite Project
+**Project for displaying your images like a slide-show software within any browser that you want with costume configurations!**
 
 ## Overview
 The ***MGLite*** Project, developed by ***Epixoul***, which includes three main scripts:  
@@ -23,11 +24,17 @@ The ***MGLite*** Project, developed by ***Epixoul***, which includes three main 
 4. Auto Startup Configuration  
    - If you select "Yes" for **auto_run_startup**, the setup will run automatically after reboot.  
    - For manual operation, set "No" for **auto_run_startup**, and you will need to run **HTCT.py** each time after reboot.
-
-5. Troubleshooting  
-   - Check **log_Stp.txt** and **log_launch.txt** for any errors.  
+5. Hazard
+   - Do not change format of script tags with **"img-data"** and **"json-data"** Id!
+   -
+6. Troubleshooting  
+   - Check **log_stp.txt** and **log_launch.txt** for any errors.  
    - If issues persist, comment on GitHub repo [MGLite-SlideShow](https://github.com/epixoul/MGLite-SlideShow) or contact Epixoul support.
-
+## Further development
+1. Introduce incoming **auto_run_startup** config.
+2. Auto check for the valid **Slides** path inside any directories.
+3. Add lookup table to recognize uncommon browsers like **Microsoft Edge**, **DuckDuckGo**, **Tor**, etc.
+4. Add GUI MGGM(MGLite GUI Manager) for better control over program.
 ## At the end
 I hope you find this project useful! For more information, visit my GitHub page [Epixoul.Github](https://github.com/epixoul).
 <br/>*Copyright (c) 2025-2026, Epixoul All Rights Reserved*
