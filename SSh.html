@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   MGLite Display
+  </title>
+  <style>
+   body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg {
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-y: hidden;
+    }
+    .rights{
+      position: absolute;
+        font-size: 0.8vw;
+        bottom: 2%;
+        right: 2%;
+        color: darkslategrey;
+        text-shadow: black 3px 3px 6px;
+      opacity: 50%;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="bg" id="bg">
+   <p class="rights">
+    Copyright (c) 2025-2026, Epixoul All Rights Reserved
+   </p>
+   <img alt="slider" height="100%" id="img" src="Slides/sld0.png" width="100%"/>
+  </div>
+  <script id="json-data" type="application/json">
+   {"load_delay": "3", "selected_display": "1", "brw_name": "firefox", "brw_drive_install_path": "c:/", "brw_exe_path": "c:/program files/mozilla firefox/firefox.exe", "html_path": "ssh.html", "slide_show_time_ms": "3000", "show_slides_randomly": "yes", "show_slides_by_click": "no", "auto_run_startup": "yes"}
+  </script>
+  <script id="img-data" type="application/json">
+   ["Slides/sld0.png", "Slides/sld1.png", "Slides/sld2.png"]
+  </script>
+  <script language="javascript">
+   var jsf = JSON.parse(document.getElementById("json-data").innerText)
+    var sh_time = jsf.slide_show_time_ms
+    var sh_rand = jsf.show_slides_randomly
+    var sh_by_click = jsf.show_slides_by_click
+    var im_arr = JSON.parse(document.getElementById("img-data").innerText)
+
+    var img_num=0
+    var last_img=0
+    var showed_img=[]
+
+    var im_arr_num=[]
+    for (let i = 0; i < im_arr.length; i++) {
+     im_arr_num.push(i)
+    }
+
+    function fadeIn(element) {
+        var op = 0.05;
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            op += 0.05;
+        }, 60);
+    }
+
+
+    function im_display() {
+       try {
+        console.log(`last im ${last_img}`)
+         console.log(img_num)
+         var image = document.getElementById("img");
+         image.src = im_arr[img_num]
+         fadeIn(image)
+         if (sh_by_click==="no"){
+           setTimeout(im_display_count, sh_time)
+         }
+       }
+       catch(err) {
+       }
+    }
+    function im_num_check(){
+      if (img_num >= im_arr.length){
+        img_num=0
+       }
+      if (img_num < 0){
+       img_num = im_arr.length-1
+      }
+      im_display()
+    }
+    function rand_gener(){
+         console.log("rand")
+         num=Math.floor(Math.random() * (im_arr.length - 0));
+         if (im_arr_num.every(val => showed_img.includes(val))){
+           showed_img=[]
+           rand_gener()
+         }
+         if (showed_img.includes(num) || num===last_img){
+          rand_gener()
+         } else last_img=null
+         return num
+     }
+    function im_display_count(){
+       if (sh_rand === "yes" && sh_by_click==="no"){
+         img_num = rand_gener()
+         showed_img.push(img_num)
+         last_img=img_num
+       }
+       if (sh_by_click==="yes" && sh_rand==="no"){
+         img_num++
+       }
+       else if(sh_by_click==="yes"){
+        document.addEventListener("mousedown",function(event){
+         if (event.button === 2) {
+            img_num--
+           } else img_num++
+          im_num_check()
+        })
+        document.addEventListener("keydown",function (event){
+          if (event.key === "Enter" || event.key === " "){
+           img_num++
+          }
+          else if (event.key === "Backspace"){
+           img_num--
+          }
+          im_num_check()
+        })
+       }
+     im_num_check()
+    }
+    im_display_count();
+  </script>
+ </body>
+</html>

@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+PyAutoGUI==0.9.54
+PyGetWindow==0.0.9
+python-dotenv==1.0.1
+pywin32==308
