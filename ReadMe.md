@@ -13,7 +13,7 @@ The ***MGLite*** Project, developed by ***Epixoul***, which includes three main 
 
 2. Slide Preparation  
    - Copy your slides in the format **"Slides/sld{numeric slide's order}.png"** into the **"/Slides"** folder.  
-   - Optionally, you can add a USB flash drive or internal folder with the **"Slides"** folder in the root directory, e.g., *E:/Slides* or *C:/Slides*.
+   - Optionally, you can add a USB flash drive or internal folder with the **"Slides"** folder in the root directory, e.g., *E:/Slides* or *C:/Slides*. In that case, script will load and replace all the images in that directory to the local **Slides** folder.
 
 3. Running Scripts
    - Install the required packages from requirements.txt.
