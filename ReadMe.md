@@ -29,5 +29,5 @@ The ***MGLite*** Project, developed by ***Epixoul***, which includes three main 
    - If issues persist, comment on GitHub repo [MGLite-SlideShow](https://github.com/epixoul/MGLite-SlideShow) or contact Epixoul support.
 
 ## At the end
-I hope you find this project useful! For more information, visit my GitHub page [Epixoul.Github](https://github.com/epixoul/MGLite-SlideShow).
+I hope you find this project useful! For more information, visit my GitHub page [Epixoul.Github](https://github.com/epixoul).
 <br/>*Copyright (c) 2025-2026, Epixoul All Rights Reserved*
