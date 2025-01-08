@@ -17,16 +17,15 @@ The ***MGLite*** Project, developed by ***Epixoul***, which includes three main 
    - Optionally, you can add a USB flash drive or internal folder with the **"Slides"** folder in the root directory, e.g., *E:/Slides* or *C:/Slides*. In that case, script will load and replace all the images in that directory to the local **Slides** folder.
 
 3. Running Scripts
-   - Install the required packages from requirements.txt.
+   - Install python and the required packages from requirements.txt with **pip install -r requirements.txt** command.
    - Execute the setup file with **STPScr.py**. Run this script again, even if you encounter any issues.
    - Run **HTCT.py** to copy the slides and run the program, if there is as USB drive then you can safely eject or remove it. 
 
 4. Auto Startup Configuration  
    - If you select "Yes" for **auto_run_startup**, the setup will run automatically after reboot.  
    - For manual operation, set "No" for **auto_run_startup**, and you will need to run **HTCT.py** each time after reboot.
-5. Hazard
-   - Do not change format of script tags with **"img-data"** and **"json-data"** Id!
-   -
+5. Hazard!
+   - Do not change format of script-tags with **"img-data"** and **"json-data"** Id on Html file!
 6. Troubleshooting  
    - Check **log_stp.txt** and **log_launch.txt** for any errors.  
    - If issues persist, comment on GitHub repo [MGLite-SlideShow](https://github.com/epixoul/MGLite-SlideShow) or contact Epixoul support.
