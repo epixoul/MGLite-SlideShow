@@ -20,11 +20,12 @@ load_dotenv()
 sep_flag=True
 def push_log(log_val):
     global sep_flag
+    curr_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     launch_log = open('Log_Push/log_launch.txt', 'a+', encoding='utf8')
     if sep_flag:
-        launch_log.write(f"\n[{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}]: New Log -- ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄ --\n")
+        launch_log.write(f"\n[{curr_time}]: New Log -- ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄  ⌄ ⌄ ⌄ --\n")
         sep_flag=False
-    launch_log.write(f"[{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}]: {log_val}\n")
+    launch_log.write(f"[{curr_time}]: {log_val}\n")
     launch_log.close()
 
 #Check for log is running well
@@ -49,7 +50,8 @@ def push_log_check():
 #Kill the browser to load properly
 def kill_browser():
     try:
-        if os.system(f'taskkill /IM {os.getenv('brw_name')}.exe /F') != 0:
+        brw_name=os.getenv('brw_name')
+        if os.system(f'taskkill /IM {brw_name}.exe /F') != 0:
             push_log(f"Browser kill err -> Something went wrong while trying to kill browser, but it may work properly.")
         else: push_log(f"Browser kill -> Successfully browser closed.")
     except Exception as err:
@@ -75,14 +77,15 @@ def write_soup_out(soup_ind, tag, attr, patt, js_val):
 def pass_val_html():
     global jsf
     slides_arr = []
-    print()
     try:
         for entry in os.listdir("Slides"):
             full_path = os.path.join("Slides/", entry)
             slides_arr.append(full_path)
         if not os.listdir("Slides"):
             push_log(f"Local slides-folder load err -> Path was empty.")
-        else: push_log(f"Local slides-folder load -> Successfully {len(os.listdir("Slides"))} slides locally loaded.")
+        else:
+            slides_len = len(os.listdir("Slides"))
+            push_log(f"Local slides-folder load -> Successfully {slides_len} slides locally loaded.")
     except Exception as err:
         push_log(f"Local slides-folder load err -> {err}")
 
