@@ -34,7 +34,8 @@ The ***MGLite*** Project, developed by ***Epixoul***, which includes three main 
 2. Auto check for the valid **Slides** path inside any directories.
 3. Add lookup table to recognize uncommon browsers like **Microsoft Edge**, **DuckDuckGo**, **Tor**, etc.
 5. Add **GUI MGGM**(MGLite GUI Manager) for better control over program.
-6. Make the program scripts lite and more compact.
+6. Colorful-terminal would be re-added into the project, after it fixed.
+7. Make the program scripts lite and more compact.
 ## At the end
 I hope you find this project useful! For more information, visit my GitHub page [Epixoul.Github](https://github.com/epixoul).
 <br/>*Copyright (c) 2025-2026, Epixoul All Rights Reserved*
